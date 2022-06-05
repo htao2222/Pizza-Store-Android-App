@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="675.0" prefWidth="540.0" style="-fx-background-color: lightblue;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PizzaPlace.PizzaBuilderController">
+    <center>
+        <AnchorPane prefHeight="550.0" prefWidth="533.0" style="-fx-background-color: lightgray;" BorderPane.alignment="CENTER">
+            <children>
+            <ComboBox fx:id="pizzaSize" layoutX="343.0" layoutY="157.0" onAction="#sizeChange" prefWidth="150.0" />
+            <Text layoutX="343.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pizza Size" wrappingWidth="98.2060546875">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </Text>
+            <Text layoutX="17.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Additional Toppings" textAlignment="CENTER" wrappingWidth="204.46360778808594">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <GridPane layoutX="17.0" layoutY="581.0" prefHeight="31.0" prefWidth="322.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <HBox prefHeight="34.0" prefWidth="186.0" GridPane.columnIndex="1">
+                     <children>
+                        <Label prefHeight="26.0" prefWidth="9.0" text="\$" />
+                        <TextField fx:id="price" editable="false" prefWidth="172.0" />
+                     </children>
+                  </HBox>
+                  <Label text="Price">
+                     <GridPane.margin>
+                        <Insets left="110.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </GridPane>
+            <Button layoutX="365.0" layoutY="580.0" mnemonicParsing="false" onAction="#orderButton" prefHeight="20.0" prefWidth="152.0" text="Add to Order" />
+            <GridPane layoutX="42.0" layoutY="93.0" prefHeight="161.0" prefWidth="292.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                      <Button fx:id="pizzaButton" contentDisplay="TOP" mnemonicParsing="false" prefHeight="225.0" prefWidth="268.0" style="-fx-background-color: black;" text="Deluxe" textFill="WHITE">
+                          <graphic>
+                              <ImageView fx:id="pizzaView" fitHeight="191.0" fitWidth="234.0" pickOnBounds="true" />
+                          </graphic>
+                          <font>
+                              <Font name="Silom" size="13.0" />
+                          </font>
+                      </Button>
+               </children>
+            </GridPane>
+            <Text layoutX="290.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current Toppings" textAlignment="CENTER" wrappingWidth="204.46360778808594">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <ListView fx:id="additionalToppings" layoutX="13.0" layoutY="315.0" prefHeight="213.0" prefWidth="206.0" />
+            <ListView fx:id="currentToppings" layoutX="316.0" layoutY="314.0" prefHeight="214.0" prefWidth="202.0" />
+            <Button layoutX="238.0" layoutY="364.0" mnemonicParsing="false" onAction="#add" text="&gt;Add&gt;" />
+            <Button layoutX="228.0" layoutY="426.0" mnemonicParsing="false" onAction="#remove" text="&lt;Remove&lt;" />
+            </children>
+            <BorderPane.margin>
+                <Insets />
+            </BorderPane.margin>
+            <padding>
+                <Insets right="-15.0" />
+            </padding>
+        </AnchorPane>
+    </center>
+</BorderPane>
